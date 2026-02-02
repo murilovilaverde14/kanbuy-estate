@@ -83,7 +83,13 @@ export default function Home() {
             }}
           ></div>
           <div style={{ position: 'relative', zIndex: 2 }}>
-            <h1 style={{ fontSize: '3rem', fontWeight: '700', marginBottom: '1rem' }}>
+            <h1
+              style={{
+                fontSize: '3rem',
+                fontWeight: '700',
+                marginBottom: '1rem',
+              }}
+            >
               Find Land You Love
             </h1>
             <p
@@ -115,7 +121,13 @@ export default function Home() {
 
         {/* Featured Properties */}
         <section style={{ padding: '5rem 2rem', background: '#f7f9fb' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}>
+          <h2
+            style={{
+              textAlign: 'center',
+              fontSize: '2rem',
+              marginBottom: '2rem',
+            }}
+          >
             Featured Land
           </h2>
           <div
