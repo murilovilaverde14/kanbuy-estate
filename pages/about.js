@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
-export default function Properties() {
+export default function About() {
   return (
     <>
-      <Head><title>Properties — Kanbuy.estate</title></Head>
+      <Head><title>About — Kanbuy.estate</title></Head>
       <header style={{
   display:'flex',justifyContent:'space-between',alignItems:'center',
   padding:'1.2rem 2rem',background:'#fff',borderBottom:'1px solid #eee',
@@ -19,7 +19,7 @@ export default function Properties() {
   </div>
 </header>
       <main style={fontFamily:'Inter, sans-serif',padding:'4rem 2rem'}>
-        <h1 style={color:'#003366',textAlign:'center',marginBottom:'1.5rem'}>Properties</h1>
+        <h1 style={color:'#003366',textAlign:'center',marginBottom:'1.5rem'}>About</h1>
         <p style={color:'#555',textAlign:'center',marginBottom:'2rem'}>Learn more about land opportunities in Garland County, Arkansas.</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87673.27088171342!2d-93.234!3d34.580!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cd0b3b8d3d25f1%3A0x1ef49b5db4ce2f3f!2sGarland%20County%2C%20AR!5e0!3m2!1sen!2sus!4v1706898899964"
           width="100%" height="400" style={border:0} allowFullScreen loading="lazy"></iframe>
