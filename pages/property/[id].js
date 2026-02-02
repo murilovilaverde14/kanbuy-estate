@@ -5,15 +5,15 @@ export default function PropertyDetail() {
   const { id } = router.query;
 
   return (
-    <main style={{fontFamily:'Inter, sans-serif',padding:'4rem 2rem'}}>
-      <img src="https://images.unsplash.com/photo-1505691723518-36a3f9386933?auto=format&fit=crop&w=1000&q=60"
-           alt="Lot" style={{width:'100%',borderRadius:'10px',marginBottom:'2rem'}}/>
-      <h1 style={{color:'#003366'}}>Property #{id}</h1>
-      <p>This property is available for purchase via owner financing.</p>
-      <ul style={{color:'#555',marginTop:'1rem',lineHeight:'1.6'}}>
-        <li>Location: Rural County, USA</li>
-        <li>Size: 1.25 acres</li>
-        <li>Terms: 60 months, $159/month</li>
+    <main style={{fontFamily:'Inter,sans-serif',padding:'4rem 2rem'}}>
+      <h1 style={{color:'#003366',marginBottom:'1rem'}}>Property #{id}</h1>
+      <img src='https://images.unsplash.com/photo-1505691723518-36a3f9386933?auto=format&fit=crop&w=1000&q=60'
+           alt='Land Image' style={{borderRadius:'8px',marginBottom:'2rem',maxWidth:'900px',width:'100%'}}/>
+      <p>This property is available for purchase via owner financing. Reach out to our team for more details.</p>
+      <ul style={{lineHeight:'1.8',marginTop:'1rem',color:'#555'}}>
+        <li>Location: United States</li>
+        <li>Parcel ID: {id}</li>
+        <li>Owner Financing: from $149/month</li>
       </ul>
     </main>
   );

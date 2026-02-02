@@ -2,33 +2,32 @@ import Link from 'next/link';
 
 export default function PropertiesPage() {
   const listings = [
-    { id: 101, name: 'Lot — Apache County, AZ', price: 7200, parcel: 139 },
-    { id: 102, name: 'Rural Land — Polk County, FL', price: 8800, parcel: 169 },
-    { id: 103, name: 'Desert Lot — Hudspeth County, TX', price: 6600, parcel: 125 },
-    { id: 104, name: 'Forest Plot — Columbia County, GA', price: 9450, parcel: 179 },
+    {id:1, title:'Rural Lot — Lake County, FL', price:6999, payment:139},
+    {id:2, title:'Desert Plot — Cochise County, AZ', price:7499, payment:149},
+    {id:3, title:'Wooded Acre — Columbia County, GA', price:9200, payment:189},
+    {id:4, title:'Open Land — Hudspeth County, TX', price:6900, payment:129},
   ];
 
   return (
-    <main style={{padding:'5rem 2rem',fontFamily:'Inter, sans-serif',background:'#fff'}}>
+    <main style={{padding:'5rem 2rem',fontFamily:'Inter,sans-serif'}}>
       <h1 style={{textAlign:'center',color:'#003366',marginBottom:'2rem'}}>Available Properties</h1>
       <div style={{
         display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',
         gap:'2rem',maxWidth:'1080px',margin:'auto'
       }}>
-        {listings.map((p) => (
-          <div key={p.id} style={{
-            background:'#f7f9fb',borderRadius:'10px',padding:'1.5rem',
-            boxShadow:'0 3px 8px rgba(0,0,0,0.08)'
+        {listings.map(l=>(
+          <div key={l.id} style={{
+            background:'#fff',borderRadius:'10px',boxShadow:'0 3px 8px rgba(0,0,0,0.1)',padding:'1.5rem'
           }}>
-            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=60"
-                 alt={p.name} style={{borderRadius:'6px',marginBottom:'1rem'}}/>
-            <h3>{p.name}</h3>
-            <p>Cash Price: ${p.price.toLocaleString()}</p>
-            <p style={{color:'#55cc44',fontWeight:'600'}}>Owner Financing: ${p.parcel}/month</p>
-            <Link href={`/property/${p.id}`}>
+            <img src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=60'
+                 alt={l.title} style={{borderRadius:'6px',marginBottom:'1rem'}}/>
+            <h3>{l.title}</h3>
+            <p>Cash Price: ${l.price.toLocaleString()}</p>
+            <p style={{color:'#55cc44',fontWeight:'600'}}>Owner Financing: ${l.payment}/month</p>
+            <Link href={`/property/${l.id}`}>
               <button style={{
-                background:'#003366',color:'#fff',border:'none',borderRadius:'6px',
-                padding:'.6rem 1rem',cursor:'pointer',marginTop:'1rem'
+                marginTop:'1rem',background:'#003366',color:'#fff',border:'none',
+                borderRadius:'6px',padding:'.6rem 1rem',cursor:'pointer'
               }}>View Details</button>
             </Link>
           </div>
