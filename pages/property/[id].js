@@ -1,43 +1,20 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
-export default function PropertyDetail() {
+export default function Property(){
   const router = useRouter();
   const { id } = router.query;
   return (
     <>
       <Head><title>Property {id} — Kanbuy.estate</title></Head>
-      <header
-  style={{
-    display:'flex',justifyContent:'space-between',alignItems:'center',
-    padding:'1.2rem 2rem',background:'#fff',borderBottom:'1px solid #eee',
-    position:'sticky',top:0,zIndex:999
-  }}
->
-  <div style={{display:'flex',alignItems:'center',gap:'1rem'}}>
-    <a href="/">
-      <img src="/logo.png" alt="Kanbuy logo" style={{height:'48px',cursor:'pointer'}}/>
-    </a>
-    <nav style={{display:'flex',gap:'1.5rem',fontWeight:'600',color:'#003366'}}>
-      {['Home','Properties','Financing','About','Contact'].map(n=>(
-        <a key={n} href={`/${n==='Home'?'':n.toLowerCase()}`} style={{textDecoration:'none',color:'#003366'}}>{n}</a>
-      ))}
-    </nav>
-  </div>
-</header>
-      <main style={fontFamily:'Inter,sans-serif',padding:'4rem 2rem'}>
-        <h1 style={color:'#003366'}>Property #{id}</h1>
-        <img src="https://images.unsplash.com/photo-1505691723518-36a3f9386933?auto=format&fit=crop&w=1000&q=60"
-          alt="Land" style={borderRadius:'8px',marginBottom:'2rem',maxWidth:'900px',width:'100%'}/>
-        <p>This property is available for immediate purchase with owner financing plans.</p>
+      <Header/>
+      <main style={{fontFamily:'Inter,sans-serif',padding:'4rem 2rem'}}>
+        <h1 style={{color:'#003366'}}>Property #{id}</h1>
+        <p>This property is available for purchase with flexible financing options.</p>
       </main>
-      <footer
-  style={{
-    textAlign:'center',padding:'1rem',background:'#f6f8fa',color:'#555',fontSize:'.9rem'
-  }}
->
-  © {new Date().getFullYear()} Kanbuy.estate — Land made simple.
-</footer>
+      <Footer/>
     </>
   );
 }

@@ -1,48 +1,16 @@
 import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-export default function Contact() {
-  return (
+export default function Page(){
+  return(
     <>
       <Head><title>Contact — Kanbuy.estate</title></Head>
-      <header
-  style={{
-    display:'flex',justifyContent:'space-between',alignItems:'center',
-    padding:'1.2rem 2rem',background:'#fff',borderBottom:'1px solid #eee',
-    position:'sticky',top:0,zIndex:999
-  }}
->
-  <div style={{display:'flex',alignItems:'center',gap:'1rem'}}>
-    <a href="/">
-      <img src="/logo.png" alt="Kanbuy logo" style={{height:'48px',cursor:'pointer'}}/>
-    </a>
-    <nav style={{display:'flex',gap:'1.5rem',fontWeight:'600',color:'#003366'}}>
-      {['Home','Properties','Financing','About','Contact'].map(n=>(
-        <a key={n} href={`/${n==='Home'?'':n.toLowerCase()}`} style={{textDecoration:'none',color:'#003366'}}>{n}</a>
-      ))}
-    </nav>
-  </div>
-</header>
-      <main style={fontFamily:'Inter,sans-serif',padding:'4rem 2rem'}>
-        <h1 style={textAlign:'center',color:'#003366',marginBottom:'1rem'}>Contact Us</h1>
-        <p style={textAlign:'center',color:'#555',marginBottom:'2rem'}>
-          Reach out to our friendly team for questions or partnerships.
-        </p>
-        <form style={display:'flex',flexDirection:'column',maxWidth:'400px',margin:'0 auto',gap:'1rem'}>
-          <input type="text" placeholder="Name" style={padding:'0.8rem',borderRadius:'6px',border:'1px solid #ccc'}/>
-          <input type="email" placeholder="Email" style={padding:'0.8rem',borderRadius:'6px',border:'1px solid #ccc'}/>
-          <textarea placeholder="Your message" rows="4" style={padding:'0.8rem',borderRadius:'6px',border:'1px solid #ccc'}></textarea>
-          <button type="submit" style={padding:'0.8rem',background:'#003366',color:'#fff',border:'none',borderRadius:'6px',cursor:'pointer'}>Send</button>
-        </form>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87673.27088171342!2d-93.234!3d34.580!"
-          width="100%" height="400" style={border:0,marginTop:'2rem'} allowFullScreen loading="lazy"></iframe>
+      <Header/>
+      <main style={fontFamily:'Inter,sans-serif',padding:'4rem 2rem',textAlign:'center',color:'#003366'}>
+        <div dangerouslySetInnerHTML={__html:`<h1>Contact Us</h1><p>Reach our team for any questions or collaborations.</p>`}/>
       </main>
-      <footer
-  style={{
-    textAlign:'center',padding:'1rem',background:'#f6f8fa',color:'#555',fontSize:'.9rem'
-  }}
->
-  © {new Date().getFullYear()} Kanbuy.estate — Land made simple.
-</footer>
+      <Footer/>
     </>
-  );
+  )
 }
