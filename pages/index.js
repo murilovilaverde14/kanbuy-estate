@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-export default function Home(){
+export default function Home() {
   return (
     <>
       <Head><title>Kanbuy.estate — Find Land You Love</title></Head>
@@ -28,8 +28,13 @@ export default function Home(){
             </p>
             <a href="/properties">
               <button style={{
-                padding:'0.85rem 1.6rem',background:'#55cc44',border:'none',
-                borderRadius:'6px',color:'#003366',fontWeight:'600',cursor:'pointer'
+                padding:'0.85rem 1.6rem',
+                background:'#55cc44',
+                border:'none',
+                borderRadius:'6px',
+                color:'#003366',
+                fontWeight:'600',
+                cursor:'pointer'
               }}>View Properties</button>
             </a>
           </div>

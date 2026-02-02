@@ -1,16 +1,16 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
-export default function Page(){
-  return(
+export default function Financing() {
+  return (
     <>
       <Head><title>Financing — Kanbuy.estate</title></Head>
       <Header/>
       <main style={fontFamily:'Inter,sans-serif',padding:'4rem 2rem',textAlign:'center',color:'#003366'}>
-        <div dangerouslySetInnerHTML={__html:`<h1>Owner Financing</h1><p>Buy land directly with easy monthly payments — no banks required.</p>`}/>
+        <h1>Owner Financing</h1>
+        <p style={maxWidth:'700px',margin:'1rem auto',color:'#555'}>Buy land directly with simple monthly payments and no credit checks.</p>
       </main>
       <Footer/>
     </>
-  )
+  );
 }
