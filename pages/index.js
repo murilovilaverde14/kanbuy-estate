@@ -12,7 +12,7 @@ export default function Home() {
         />
       </Head>
 
-      {/* Header / Navigation */}
+      {/* Header / Navbar */}
       <header
         style={{
           display: 'flex',
@@ -43,13 +43,13 @@ export default function Home() {
             }}
           >
             {['Home', 'Properties', 'Financing', 'About', 'Contact'].map(
-              (item) => (
+              (n) => (
                 <a
-                  key={item}
-                  href={`/${item === 'Home' ? '' : item.toLowerCase()}`}
+                  key={n}
+                  href={`/${n === 'Home' ? '' : n.toLowerCase()}`}
                   style={{ textDecoration: 'none', color: '#003366' }}
                 >
-                  {item}
+                  {n}
                 </a>
               )
             )}
@@ -113,11 +113,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Listings */}
+        {/* Featured Properties */}
         <section style={{ padding: '5rem 2rem', background: '#f7f9fb' }}>
-          <h2
-            style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}
-          >
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}>
             Featured Land
           </h2>
           <div
@@ -146,11 +144,7 @@ export default function Home() {
                 <img
                   src={`https://images.unsplash.com/${img}?auto=format&fit=crop&w=800&q=60`}
                   alt="Land"
-                  style={{
-                    width: '100%',
-                    height: '220px',
-                    objectFit: 'cover',
-                  }}
+                  style={{ width: '100%', height: '220px', objectFit: 'cover' }}
                 />
                 <div style={{ padding: '1.5rem' }}>
                   <h3>Lot {i + 1} — Arkansas</h3>
@@ -176,35 +170,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Call to Action */}
-        <section
-          style={{
-            background: '#003366',
-            color: '#fff',
-            textAlign: 'center',
-            padding: '4rem 2rem',
-          }}
-        >
-          <h2>Looking to purchase rural land?</h2>
-          <p style={{ color: '#e5f1ff', marginBottom: '1.5rem' }}>
-            View properties with flexible owner financing.
-          </p>
-          <a href="/properties">
-            <button
-              style={{
-                background: '#55cc44',
-                color: '#003366',
-                border: 'none',
-                borderRadius: '6px',
-                padding: '1rem 2rem',
-                fontWeight: '600',
-              }}
-            >
-              Explore Listings
-            </button>
-          </a>
         </section>
       </main>
 
