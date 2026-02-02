@@ -1,264 +1,68 @@
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Kanbuy.estate — Seu terreno ideal</title>
-        <meta
-          name="description"
-          content="Compre terrenos com facilidade e financiamento direto. Kanbuy.estate — seu marketplace de propriedades."
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Compre terrenos nos EUA com facilidade e financiamento direto com a Kanbuy.estate." />
       </Head>
 
-      {/* Cabeçalho */}
-      <header
-        style={{
-          background: '#ffffff',
-          borderBottom: '1px solid #eee',
-          position: 'sticky',
-          top: 0,
-          zIndex: 1000,
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '1rem 2rem',
-          }}
-        >
-          <h1 style={{ color: '#003366', fontWeight: 'bold', fontSize: '1.5rem' }}>
-            <span style={{ color: '#55cc44' }}>Kanbuy</span>.estate
-          </h1>
-          <nav>
-            <a href="/" style={{ marginRight: '1.5rem', color: '#003366' }}>
-              Home
-            </a>
-            <a href="/properties" style={{ marginRight: '1.5rem', color: '#003366' }}>
-              Propriedades
-            </a>
-            <a href="/financing" style={{ marginRight: '1.5rem', color: '#003366' }}>
-              Financiamento
-            </a>
-            <a href="/contact" style={{ color: '#003366' }}>
-              Contato
-            </a>
-          </nav>
-        </div>
+      <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem', background: '#fff', borderBottom: '1px solid #eee' }}>
+        <img src="/logo.png" alt="Kanbuy Logo" style={{ height: '48px' }} />
       </header>
 
-      {/* Seção principal */}
-      <main style={{ fontFamily: 'Inter, sans-serif', color: '#333' }}>
-        {/* Hero Section */}
-        <section
-          style={{
-            textAlign: 'center',
-            padding: '5rem 2rem',
-            background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-          }}
-        >
-          <h2 style={{ fontSize: '2.8rem', color: '#003366', marginBottom: '1rem' }}>
-            Encontre seu terreno ideal
-          </h2>
-          <p
-            style={{
-              color: '#555',
-              maxWidth: '620px',
-              margin: '0 auto 2.5rem',
-              fontSize: '1.1rem',
-              lineHeight: 1.6,
-            }}
-          >
-            Terrenos selecionados com financiamento direto, acesso fácil e parcelamento
-            flexível. Seu próximo investimento começa aqui.
-          </p>
-
-          {/* Campo de busca */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-            <input
-              type="text"
-              placeholder="Busque por cidade, condado ou ZIP..."
-              style={{
-                padding: '0.8rem 1rem',
-                border: '1px solid #ccc',
-                borderRadius: '8px 0 0 8px',
-                width: '300px',
-                outline: 'none',
-              }}
-            />
-            <button
-              style={{
-                background: '#55cc44',
-                color: '#fff',
-                border: 'none',
-                padding: '0 1.5rem',
-                borderRadius: '0 8px 8px 0',
-                cursor: 'pointer',
-                fontWeight: '600',
-              }}
-            >
-              Buscar
-            </button>
+      <main style={{ fontFamily: 'Inter, sans-serif', color: '#003366' }}>
+        <section style={{ textAlign: 'center', padding: '6rem 2rem', background: 'linear-gradient(120deg, #003366, #004c99, #55cc44)', color: '#fff' }}>
+          <h1 style={{ fontSize: '2.8rem', fontWeight: '700' }}>Encontre seu terreno ideal</h1>
+          <p style={{ marginTop: '1rem', fontSize: '1.1rem' }}>Explore oportunidades únicas e adquira seu lote com parcelas acessíveis.</p>
+          <div style={{ marginTop: '2rem' }}>
+            <input type="text" placeholder="Buscar cidade, condado ou ZIP..." style={{ padding: '0.8rem', width: '300px', borderRadius: '6px', border: 'none', outline: 'none' }} />
+            <Link href="/properties">
+              <button style={{ marginLeft: '0.5rem', padding: '0.8rem 1.6rem', background: '#55cc44', borderRadius: '6px', border: 'none', color: '#003366', fontWeight: '600', cursor: 'pointer' }}>Buscar</button>
+            </Link>
           </div>
-
-          {/* Chamada extra */}
-          <button
-            style={{
-              background: '#003366',
-              color: '#fff',
-              border: 'none',
-              padding: '0.9rem 2rem',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontWeight: '600',
-            }}
-            onClick={() => (window.location.href = '/properties')}
-          >
-            Ver terrenos disponíveis
-          </button>
         </section>
 
-        {/* Seção de destaque */}
-        <section style={{ padding: '4rem 2rem', background: '#ffffff' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <h3
-              style={{
-                textAlign: 'center',
-                color: '#003366',
-                fontSize: '2rem',
-                marginBottom: '2rem',
-              }}
-            >
-              Terrenos em destaque
-            </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '1.5rem',
-              }}
-            >
-              {[1, 2, 3].map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    border: '1px solid #eee',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-                  }}
-                >
-                  <img
-                    src={`https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=900&q=60`}
-                    alt="Terreno"
-                    style={{ width: '100%', height: '220px', objectFit: 'cover' }}
-                  />
-                  <div style={{ padding: '1.2rem' }}>
-                    <h4 style={{ color: '#003366', marginBottom: '0.5rem' }}>
-                      Terreno nº {item}
-                    </h4>
-                    <p style={{ color: '#666' }}>Parcelas a partir de $129/mês</p>
-                    <button
-                      style={{
-                        background: '#55cc44',
-                        color: '#fff',
-                        border: 'none',
-                        padding: '0.6rem 1.2rem',
-                        borderRadius: '6px',
-                        cursor: 'pointer',
-                        fontWeight: '600',
-                        marginTop: '0.8rem',
-                      }}
-                    >
-                      Ver Detalhes
-                    </button>
-                  </div>
+        <section style={{ padding: '4rem 2rem', background: '#f7f9fb' }}>
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: '700' }}>Propriedades em destaque</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '2rem', marginTop: '2rem', maxWidth: '1080px', marginInline: 'auto' }}>
+            {[1,2,3].map(i => (
+              <div key={i} style={{ background:'#fff', borderRadius:'8px', boxShadow:'0 2px 8px rgba(0,0,0,0.1)', overflow:'hidden' }}>
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60" alt="Terreno" style={{ width:'100%', height:'200px', objectFit:'cover' }}/>
+                <div style={{ padding:'1.5rem' }}>
+                  <h3>Terreno {i} — Florida</h3>
+                  <p style={{ color:'#555' }}>Parcelas a partir de $129/mês</p>
+                  <Link href="/property/123">
+                    <button style={{ marginTop:'1rem', background:'#003366', color:'#fff', border:'none', borderRadius:'6px', padding:'.6rem 1.2rem', cursor:'pointer' }}>Ver detalhes</button>
+                  </Link>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefícios */}
-        <section
-          style={{
-            padding: '4rem 2rem',
-            background: 'linear-gradient(180deg, #f5f7fa 0%, #ffffff 100%)',
-          }}
-        >
-          <h3
-            style={{
-              textAlign: 'center',
-              color: '#003366',
-              fontSize: '2rem',
-              marginBottom: '3rem',
-            }}
-          >
-            Por que escolher a Kanbuy.estate?
-          </h3>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '2rem',
-              maxWidth: '1200px',
-              margin: '0 auto',
-            }}
-          >
-            {[
-              {
-                title: 'Financiamento direto',
-                text: 'Sem burocracia bancária, direto com o vendedor.',
-              },
-              {
-                title: 'Compra 100% online',
-                text: 'Escolha seu terreno, assine o contrato digitalmente e comece hoje.',
-              },
-              {
-                title: 'Terrenos selecionados',
-                text: 'Curadoria profissional com foco em liquidez e valorização.',
-              },
-            ].map((b, idx) => (
-              <div
-                key={idx}
-                style={{
-                  textAlign: 'center',
-                  padding: '2rem',
-                  border: '1px solid #e6e6e6',
-                  borderRadius: '8px',
-                  background: '#fff',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-                }}
-              >
-                <h4 style={{ color: '#003366', marginBottom: '0.5rem' }}>{b.title}</h4>
-                <p style={{ color: '#555' }}>{b.text}</p>
               </div>
             ))}
           </div>
         </section>
-      </main>
 
-      {/* Rodapé */}
-      <footer
-        style={{
-          background: '#003366',
-          color: '#fff',
-          textAlign: 'center',
-          padding: '2rem 1rem',
-          fontSize: '0.9rem',
-          marginTop: '3rem',
-        }}
-      >
-        <p>© {new Date().getFullYear()} Kanbuy.estate — Todos os direitos reservados.</p>
-        <p>
-          Desenvolvido com 💚 em parceria com Galaxy AI.
-        </p>
-      </footer>
+        <section style={{ textAlign:'center', padding:'4rem 2rem', background:'#fff' }}>
+          <h2>Por que comprar com a Kanbuy?</h2>
+          <p style={{ maxWidth:'600px', margin:'1rem auto', color:'#555' }}>
+            Financiamento fácil, compra 100% online e transparência total em todos os processos.
+          </p>
+        </section>
+
+        <section style={{ background:'#003366', color:'#fff', textAlign:'center', padding:'4rem 2rem' }}>
+          <h2>Pronto para conquistar seu terreno?</h2>
+          <p>Escolha, simule o financiamento e adquira seu lote agora mesmo.</p>
+          <Link href="/properties">
+            <button style={{ background:'#55cc44', color:'#003366', border:'none', borderRadius:'6px', padding:'1rem 2rem', fontWeight:'600', marginTop:'1rem' }}>Ver terrenos disponíveis</button>
+          </Link>
+        </section>
+
+        <footer style={{ textAlign:'center', padding:'1rem', background:'#f7f9fb', color:'#555' }}>
+          © {new Date().getFullYear()} Kanbuy.estate — Compra de terrenos simplificada.
+        </footer>
+      </main>
     </>
   );
 }
